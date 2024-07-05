@@ -1,8 +1,9 @@
 import React from 'react'
 import MiniMenu from "./MiniMenu"
+import "../../stylesheets/Menubar/Minimenu.css"
 const Menubar = () => {
   return (
-    <div>
+    <div id='menu'>
       <MiniMenu/>
     </div>
   )
