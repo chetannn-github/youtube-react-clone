@@ -1,5 +1,6 @@
 import { House } from 'lucide-react'
 import React from 'react'
+import "../../stylesheets/Menubar/Minimenu.css"
 
 const MiniMenu = () => {
   return (

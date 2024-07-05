@@ -1,0 +1,29 @@
+#minimenu{
+    position: relative;
+    width: 70px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 10px 10px;
+    /* background: #000; */
+}
+
+#minimenu .links{
+    height: 50px;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    
+}
+#minimenu .links p{
+    font-size: 10px;
+    color: #f1f1f1e4;
+}
