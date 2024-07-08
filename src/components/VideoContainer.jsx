@@ -15,7 +15,7 @@ const VideoContainer = () => {
     <div id='video-container'>
         {videoList.map((video)=>(
             <div className="video">
-                <img src={`${video.snippet.thumbnails?.maxres?.url || video.snippet.thumbnails?.high?.url}`} alt="" />
+                <img src={`${video.snippet.thumbnails?.maxres?.url || video.snippet.thumbnails?.high?.url || video.snippet.thumbnails?.medium?.url}`} alt="" />
                 <div className="video-info">
                     <div id="channel-img">
                     <img src={`${video.snippet.thumbnails?.maxres?.url || video.snippet.thumbnails?.high?.url}`} alt="" />

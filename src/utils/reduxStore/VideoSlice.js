@@ -4,7 +4,8 @@ const videoSlice = createSlice({
     name:"videoList",
     initialState:{
         homepage:null,
-        searchResult:null
+        searchResult:null,
+        showSearchResult:null,
     },
     reducers:{
         addVideos:(state,action)=>{
@@ -12,9 +13,12 @@ const videoSlice = createSlice({
         },
         addSearchResult:(state,action) =>{
             state.searchResult= action.payload;
+        },
+        toggleShowSearchResult:(state,action) =>{
+            state.showSearchResult = action.payload;
         }
     }
 });
 
 export default videoSlice.reducer;
-export const {addVideos , addSearchResult} = videoSlice.actions;
+export const {addVideos , addSearchResult,toggleShowSearchResult} = videoSlice.actions;

@@ -4,7 +4,7 @@ import "../../stylesheets/SearchBar.css"
 import SearchResult from '../SearchResult'
 import { YT_API_KEY } from '../../utils/constant'
 import { useDispatch } from 'react-redux'
-import { addSearchResult, addVideos } from '../../utils/reduxStore/VideoSlice'
+import { addSearchResult, addVideos, toggleShowSearchResult } from '../../utils/reduxStore/VideoSlice'
 
 const SearchBar= () => {
   let searchQuery = useRef(null);
@@ -28,11 +28,15 @@ const SearchBar= () => {
   
       
   }
+
+  let handleShowSearchResult =(show) =>{
+    dispatch(toggleShowSearchResult(show))
+  }
     
 
   return (<>
     <div id= "searchbar" >
-        <input ref={searchQuery} type="text"  placeholder='Search' onChange={()=>{handleChange(searchQuery)}}/>
+        <input ref={searchQuery} type="text"  placeholder='Search' onChange={()=>{handleChange(searchQuery)}} onFocus={()=>handleShowSearchResult(true)} onBlur={()=>handleShowSearchResult(false)}/>
         <Search onClick={()=>handleSearch(searchQuery)}/>
     </div>
     <SearchResult/></>
