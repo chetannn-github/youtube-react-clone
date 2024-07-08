@@ -11,7 +11,7 @@ const SearchBar= () => {
   let dispatch = useDispatch();
 
   let handleChange = async(searchQuery) =>{ console.log("hiiiiiiiii")
-    let result = await fetch(`http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${searchQuery.current.value}`);
+    let result = await fetch(`https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${searchQuery.current.value}`);
     let json = await result.json();
    
     dispatch(addSearchResult(json[1]))
