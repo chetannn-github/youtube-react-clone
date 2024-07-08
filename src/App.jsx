@@ -1,4 +1,4 @@
-import './App.css'
+
 import Browse from './components/Browse'
 import Navbar from './components/Navbar/Navbar'
 
