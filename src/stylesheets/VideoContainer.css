@@ -8,11 +8,18 @@
     /* justify-content: space-between; */
     padding: 0 30px 0 0;
 }
+#video-container a{
+    height: 300px;
+    width: 24%;
+    position: relative;
+    
+}
+
 
 
 .video{
     height: 300px;
-    width:24%;
+    width:100%;
     /* background: #613838; */
 
     border-radius: 12px;

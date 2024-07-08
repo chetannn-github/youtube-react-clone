@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { YT_API_LINK } from "../constant";
-import { addVideos } from "../reduxStore/VideoSlice";
+import { addVideoSearchResult } from "../reduxStore/VideoSlice";
 
 const usefetchVideoList = (searchQuery) =>{
     let dispatch = useDispatch();
@@ -10,7 +10,7 @@ const usefetchVideoList = (searchQuery) =>{
        let res=  await fetch(YT_API_LINK);
        let json = await res.json();
     //    console.log(json.items);
-       dispatch(addVideos(json.items));       
+       dispatch(addVideoSearchResult(json.items));       
     }
    
     useEffect(()=>{fetchData()},[]);

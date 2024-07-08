@@ -4,7 +4,8 @@ import "../../stylesheets/SearchBar.css"
 import SearchResult from '../SearchResult'
 import { YT_API_KEY } from '../../utils/constant'
 import { useDispatch } from 'react-redux'
-import { addSearchResult, addVideos, toggleShowSearchResult } from '../../utils/reduxStore/VideoSlice'
+import { addSearchResult, addVideos, addVideoSearchResult, toggleShowSearchResult } from '../../utils/reduxStore/VideoSlice'
+import { Link } from 'react-router-dom'
 
 const SearchBar= () => {
   let searchQuery = useRef(null);
@@ -24,7 +25,7 @@ const SearchBar= () => {
     let result = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${searchQuery.current.value}&key=${YT_API_KEY}`);
     let json = await result.json();
     // console.log(json.items)
-    dispatch(addVideos(json.items))
+    dispatch(addVideoSearchResult(json.items))
   
       
   }
@@ -37,7 +38,9 @@ const SearchBar= () => {
   return (<>
     <div id= "searchbar" >
         <input ref={searchQuery} type="text"  placeholder='Search' onChange={()=>{handleChange(searchQuery)}} onFocus={()=>handleShowSearchResult(true)} onBlur={()=>handleShowSearchResult(false)}/>
-        <Search onClick={()=>handleSearch(searchQuery)}/>
+        <Link to={"/search"}>
+          <Search onClick={()=>handleSearch(searchQuery)}/>
+        </Link>
     </div>
     <SearchResult/></>
   )

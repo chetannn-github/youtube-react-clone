@@ -4,17 +4,19 @@ import { EllipsisVertical } from 'lucide-react';
 
 import { useSelector } from 'react-redux';
 import usefetchVideoList from '../utils/customHooks/usefetchVideoList';
+import { Link } from 'react-router-dom';
 
 const VideoContainer = () => {
    let videoList = useSelector((store)=>(store.videoList.homepage));
     usefetchVideoList();
    
     if (!videoList){return} 
-    // console.log(videoList[0]);
+    console.log(videoList[0]);
   return (
     <div id='video-container'>
         {videoList.map((video)=>(
-            <div className="video">
+          <Link to={`/${video.id}`}>
+              <div className="video">
                 <img src={`${video.snippet.thumbnails?.maxres?.url || video.snippet.thumbnails?.high?.url || video.snippet.thumbnails?.medium?.url}`} alt="" />
                 <div className="video-info">
                     <div id="channel-img">
@@ -30,12 +32,13 @@ const VideoContainer = () => {
                     <div id="views">
                        <p>{`${Math.round(video.statistics?.viewCount/1000)<999 ? Math.round(video.statistics?.viewCount/1000):(video.statistics?.viewCount/1000000).toFixed(1)}${Math.round(video.statistics?.viewCount/1000)<999 ?"K":"M"}`} views</p>
                     </div>
-                </div>
+                    </div>
                 <div id="more-info">
-                <EllipsisVertical />
+                    <EllipsisVertical />
                 </div>
             </div>
         </div>
+          </Link>
         ))}
         
        

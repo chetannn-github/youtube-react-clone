@@ -27,9 +27,14 @@
    
     /* outline: 1px solid rgba(56, 56, 245, 0.596); */
 }
-#searchbar svg{
+
+#searchbar a{
     height: 60%;
     width: 60px;
+}
+#searchbar svg{
+    height: 100%;
+    width:100%;
 
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;

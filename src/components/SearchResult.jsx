@@ -12,11 +12,12 @@ const SearchResult = () => {
   return  (
    <div id="search-result">
     {searchResults.map((search)=>(
+      
         <div className="result">
-        <Search /> 
-
-        <div className="txt">{search}</div>
+          <Search /> 
+          <div className="txt">{search}</div>
         </div>
+        
     ))}
        
    </div>
