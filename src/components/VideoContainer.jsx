@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import usefetchVideoList from '../utils/customHooks/usefetchVideoList';
 
 const VideoContainer = () => {
-   let videoList = useSelector((store)=>(store.videoList));
+   let videoList = useSelector((store)=>(store.videoList.homepage));
     usefetchVideoList();
    
     if (!videoList){return} 

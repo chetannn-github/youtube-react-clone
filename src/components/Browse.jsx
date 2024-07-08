@@ -8,6 +8,7 @@ const Browse = () => {
     <div id='browse' >
         <Menubar/>
         <VideoContainer/>
+        
     </div>
   )
 }

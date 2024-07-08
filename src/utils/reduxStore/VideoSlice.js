@@ -2,13 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const videoSlice = createSlice({
     name:"videoList",
-    initialState:null,
+    initialState:{
+        homepage:null,
+        searchResult:null
+    },
     reducers:{
         addVideos:(state,action)=>{
-            return action.payload;
+            state.homepage=  action.payload;
+        },
+        addSearchResult:(state,action) =>{
+            state.searchResult= action.payload;
         }
     }
 });
 
 export default videoSlice.reducer;
-export const {addVideos} = videoSlice.actions;
+export const {addVideos , addSearchResult} = videoSlice.actions;

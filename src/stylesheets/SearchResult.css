@@ -1,0 +1,29 @@
+#search-result{
+    max-height:70%;
+    width:43%;
+    background: #201f1f;
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%);
+    
+overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    z-index: 99;
+    padding:20px 10px;
+    border-radius: 10px;
+}
+
+#search-result .result{
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    color:#f1f1f1;
+}
+
+#search-result .result svg{
+    height: 80%;
+}
