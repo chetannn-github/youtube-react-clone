@@ -22,13 +22,13 @@ const VideoContainer = () => {
                     </div>
                     <div id="txt-wrapper">
                         <div id="title">
-                        <h4>{video.snippet.title}</h4>
+                        <h4>{video.snippet?.title}</h4>
                     </div>
                     <div id="channel-name">
-                        <p>{video.snippet.channelTitle}</p>
+                        <p>{video.snippet?.channelTitle}</p>
                     </div>
                     <div id="views">
-                       <p>{`${Math.round(video.statistics.viewCount/1000)<999 ? Math.round(video.statistics.viewCount/1000):(video.statistics.viewCount/1000000).toFixed(1)}${Math.round(video.statistics.viewCount/1000)<999 ?"K":"M"}`} views</p>
+                       <p>{`${Math.round(video.statistics?.viewCount/1000)<999 ? Math.round(video.statistics?.viewCount/1000):(video.statistics?.viewCount/1000000).toFixed(1)}${Math.round(video.statistics?.viewCount/1000)<999 ?"K":"M"}`} views</p>
                     </div>
                 </div>
                 <div id="more-info">
