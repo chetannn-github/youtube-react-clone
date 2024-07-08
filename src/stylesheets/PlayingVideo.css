@@ -1,0 +1,33 @@
+#video-playing{
+   
+    width: 100%;
+min-height: 100vh;
+    padding: 0 10%;
+ padding-top:100px ;
+ /* background: #892323; */
+}
+
+
+#video-playing #nowVideo{
+    width: 70%;
+    min-height:100vh ;
+    position: relative;
+
+}
+
+
+#video-playing #nowVideo #player{
+    height: 70%;
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+#video-playing #nowVideo #player  iframe{
+    height: 400px !important;
+    width: 100% !important ;
+}
+
+
