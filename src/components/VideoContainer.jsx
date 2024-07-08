@@ -1,31 +1,24 @@
-import React, { useEffect } from 'react'
+import React  from 'react'
 import "../stylesheets/VideoContainer.css";
 import { EllipsisVertical } from 'lucide-react';
-import { YT_API_LINK } from '../utils/constant';
-import { useDispatch, useSelector } from 'react-redux';
-import { addVideos } from '../utils/reduxStore/VideoSlice';
-const VideoContainer = () => {
-    let dispatch = useDispatch();
-    let videoList = useSelector((store)=>(store.videoList));
 
-    let fetchData =async()=>{console.log("hii");
-       let res=  await fetch(YT_API_LINK);
-       let json = await res.json();
-    //    console.log(json.items);
-       dispatch(addVideos(json.items));       
-    }
+import { useSelector } from 'react-redux';
+import usefetchVideoList from '../utils/customHooks/usefetchVideoList';
+
+const VideoContainer = () => {
+   let videoList = useSelector((store)=>(store.videoList));
+    usefetchVideoList();
    
-    useEffect(()=>{fetchData()},[]);
-if (!videoList){return} 
-    console.log(videoList[0]);
+    if (!videoList){return} 
+    // console.log(videoList[0]);
   return (
     <div id='video-container'>
         {videoList.map((video)=>(
             <div className="video">
-                <img src={`${video.snippet.thumbnails.high.url}`} alt="" />
+                <img src={`${video.snippet.thumbnails?.maxres?.url || video.snippet.thumbnails?.high?.url}`} alt="" />
                 <div className="video-info">
                     <div id="channel-img">
-                    <img src={`${video.snippet.thumbnails.maxres.url}`} alt="" />
+                    <img src={`${video.snippet.thumbnails?.maxres?.url || video.snippet.thumbnails?.high?.url}`} alt="" />
                     </div>
                     <div id="txt-wrapper">
                         <div id="title">
@@ -35,7 +28,7 @@ if (!videoList){return}
                         <p>{video.snippet.channelTitle}</p>
                     </div>
                     <div id="views">
-                        <p>{ Math.round(video.statistics.viewCount/1000)}K views</p>
+                       <p>{`${Math.round(video.statistics.viewCount/1000)<999 ? Math.round(video.statistics.viewCount/1000):(video.statistics.viewCount/1000000).toFixed(1)}${Math.round(video.statistics.viewCount/1000)<999 ?"K":"M"}`} views</p>
                     </div>
                 </div>
                 <div id="more-info">

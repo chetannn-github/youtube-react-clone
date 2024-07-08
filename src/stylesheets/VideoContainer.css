@@ -13,7 +13,7 @@
 .video{
     height: 300px;
     width:24%;
-    /* background: #000; */
+    /* background: #613838; */
 
     border-radius: 12px;
     overflow: hidden;
@@ -28,11 +28,11 @@
     height: 40%;
     width: 100%;
     position: relative;
-    /* background: #b43f3f; */
+    /* background: #ad2222; */
 
     display: flex;
     gap: 10px;
-    padding: 10px;
+    padding:10px 5px;
     
 }
 
@@ -65,8 +65,11 @@
 }
 
 #video-container .video-info #txt-wrapper #title{
-    /* background: #a52424; */
-    /* display: flex; */
+    /* background: #4f0404; */
+    max-height: 40%;
+    width: 100%;
+
+   
 } 
 
 #video-container .video-info #txt-wrapper #title h4{
@@ -74,6 +77,12 @@
     font-weight: 500;
     font-size: 15px;
     
+    overflow: hidden;
+    display: -webkit-box;           /* Use the flexible box layout model */
+    -webkit-box-orient: vertical;   /* Set the orientation to vertical */
+    text-overflow: ellipsis;        /* Show the ellipsis (...) */
+    -webkit-line-clamp: 2;    
+    line-clamp: 2;
 }
 
 #video-container .video-info p{

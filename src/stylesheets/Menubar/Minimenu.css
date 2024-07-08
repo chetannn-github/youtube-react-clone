@@ -5,7 +5,7 @@
     /* background: #000; */
 }
 #minimenu{
-    position: relative;
+    position: fixed;
     width: 70px;
     min-height: 100%;
 

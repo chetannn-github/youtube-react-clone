@@ -2,7 +2,7 @@
     min-height: calc(100vh - 90px) ;
     width: 100%;
     position: relative;
-
+    padding-top: 90px;
     display: flex;
     gap: 30px;
     /* background: #b86868; */

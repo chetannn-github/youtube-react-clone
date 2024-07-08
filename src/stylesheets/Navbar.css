@@ -2,13 +2,16 @@
     height: 90px;
     min-width: 100vw;
 
-    /* background: #ae4040; */
+    background: #0f0f0f;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding: 0px 30px;
     padding-bottom:20px ;
+
+    position: fixed;
+    z-index: 99;
 }
 
 #nav #nav-p1{
