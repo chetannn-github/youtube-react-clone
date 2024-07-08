@@ -1,5 +1,5 @@
 @font-face {
-    font-family: gilroy;
+    font-family: hii;
     src: url(../public/font/Gilroy-Regular.ttf);
 
 }
@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Gilroy";
+    font-family: "hii";
     
 }
 
