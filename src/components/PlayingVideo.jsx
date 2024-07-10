@@ -21,6 +21,16 @@ const PlayingVideo = () => {
   if (!comments  || !videoInfo) return
   // console.log(comments[0])
 
+  let viewCount = videoInfo.statistics.viewCount;
+  let viewsInt = parseInt(viewCount);
+
+  let isoDateStr =videoInfo.snippet.publishedAt;
+  let date = new Date(isoDateStr);
+
+  let options = { day: 'numeric', month: 'short', year: 'numeric' };
+  let formattedDate = date.toLocaleDateString('en-GB', options);
+
+
   return (
     <div id="video-playing">
       <div id="nowVideo">
@@ -33,23 +43,27 @@ const PlayingVideo = () => {
             </div>
             
             <div id="stats">
-              <div id="channel-logo">
-                <img src="" alt="" />
-              </div>
-              <div id="channel">
-                <div id="name">
-                  <h4>{videoInfo.snippet.channelTitle}</h4>
+             <div id="left">
+                <div id="channel-logo">
+                  <img src="" alt="" />
                 </div>
-                <div id="join">Join</div>
-                <div id="subscribe">Subscribe</div>
+                <div id="channel">
+                  <div id="name">
+                    <h4>{videoInfo.snippet.channelTitle}</h4>
+                </div>
+                
+                <div id="subscribe">Subscribed</div>
               </div>
+             </div>
+               <div id="like">
+              <ThumbsUp/> {Math.round(videoInfo.statistics.likeCount/1000)}K
             </div>
-            <div id="like">
-              <ThumbsUp/> {videoInfo.statistics.likeCount}
             </div>
+           
         </div>
 
         <div id="description">
+          <p>{viewsInt.toLocaleString('en-US')} views &nbsp; {formattedDate }</p>
           <p>
             {videoInfo.snippet.description}
           </p>
