@@ -78,13 +78,15 @@ min-height: 100vh;
 
 
 #video-playing #nowVideo #video-info #stats #channel #subscribe{
-    padding: 5px 20px;
+    height: fit-content;
+    padding: 10px 30px;
     border-radius: 30px;
-    background: #3f3f3f;
+    background: #262626;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 
 }
 #video-playing #nowVideo #comments{
@@ -98,29 +100,67 @@ min-height: 100vh;
 }
 
 #like{
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 5px 20px;
+    padding: 10px 25px;
     border-radius: 30px;
-    background: #3f3f3f;
+    background: #272727;
     gap: 5px;
 }
 
 
 #description{
-    background: #3f3f3f;
+    background: #272727;
     border-radius:15px ;
     padding: 15px 10px;
 
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: 130px;
+    overflow: hidden;
+    margin-bottom:30px ;
 }
+
+#description p{
+    overflow: hidden;
+    display: -webkit-box;   
+           /* Use the flexible box layout model */
+    -webkit-box-orient: vertical;   /* Set the orientation to vertical */
+    text-overflow: ellipsis;        /* Show the ellipsis (...) */
+    -webkit-line-clamp: 3; 
+    line-clamp: 3;
+}
+
+#description.fit-content p{
+    
+    display: initial;   
+           /* Use the flexible box layout model */
+    -webkit-box-orient: vertical;   /* Set the orientation to vertical */
+    text-overflow: unset;        /* Show the ellipsis (...) */
+    -webkit-line-clamp: unset; 
+    line-clamp: unset;
+}
+
+
 
 
 #buttons{
     display: flex;
     gap: 10px;
+
+    justify-content: center;
+    align-items: center;
 }
+
+#description.fit-content{
+    height: max-content;
+    -webkit-line-clamp: unset;   
+    line-clamp: unset;
+   overflow: visible;
+   text-overflow: initial;  
+}
+
