@@ -5,6 +5,7 @@ min-height: 100vh;
     padding: 0 10%;
  padding-top:100px ;
  /* background: #892323; */
+ color: #f0f0f0;
 }
 
 
@@ -34,6 +35,17 @@ min-height: 100vh;
 }
 
 
+#video-playing #nowVideo #video-info #stats{
+        display: flex;
+        /* background: #bc1212; */
+        
+}
+
+
+#video-playing #nowVideo #video-info #stats #channel{
+    display: flex;
+    gap: 20px;
+}
 
 
 #video-playing #nowVideo #comments{
