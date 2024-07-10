@@ -11,7 +11,7 @@ const VideoContainer = () => {
     usefetchVideoList();
    
     if (!videoList){return} 
-    console.log(videoList[0]);
+    // console.log(videoList[0]);
   return (
     <div id='video-container'>
         {videoList.map((video)=>(

@@ -13,6 +13,8 @@ min-height: 100vh;
     min-height:100vh ;
     position: relative;
 
+    /* background: #1a1370; */
+
 }
 
 
@@ -26,8 +28,20 @@ min-height: 100vh;
 
 
 #video-playing #nowVideo #player  iframe{
-    height: 400px !important;
+    height: 500px !important;
     width: 100% !important ;
+    position: relative;
 }
 
 
+
+
+#video-playing #nowVideo #comments{
+    /* background: #46d020; */
+    min-height: 400px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
