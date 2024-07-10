@@ -45,18 +45,25 @@
 .comment #left  #info{
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
 }
 
 
 .comment #left h4{
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     color: #f0f0f0;
 }
 
 .comment #left #likes{
+    height: 30px;
+    margin-top: 5px;
     display: flex;
-    align-items: center;
-    gap:5px
+    align-items:center;
+    gap:5px;
+    /* justify-content: center; */
+}
+
+.comment svg{
+    opacity: 0.9;
 }
