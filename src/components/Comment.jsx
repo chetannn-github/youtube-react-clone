@@ -11,13 +11,13 @@ const Comment = ({comment}) => {
         </div>
         <div id="info">
           <div id="channel-name">
-            <h4>{comment.snippet.topLevelComment.snippet.authorDisplayName}</h4>
+            <h4>{comment.snippet?.topLevelComment?.snippet?.authorDisplayName}</h4>
           </div>
           <div id="comment">
-            <h4>{comment.snippet.topLevelComment.snippet.textOriginal} </h4>
+            <h4>{comment.snippet?.topLevelComment?.snippet?.textOriginal} </h4>
           </div>
           <div id="likes">
-          <h4>{comment.snippet.topLevelComment.snippet.likeCount}</h4>
+          <h4>{comment.snippet?.topLevelComment?.snippet?.likeCount}</h4>
           <ThumbsUp />
 
           <ThumbsDown/>
