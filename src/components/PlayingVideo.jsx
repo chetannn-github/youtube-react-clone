@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Comment from './Comment';
 import useVideoInfo from '../utils/customHooks/useVideoInfo';
-import { ThumbsUp } from 'lucide-react';
+import { ArrowDownToLine, Share2, ThumbsUp } from 'lucide-react';
 
 
 const PlayingVideo = () => {
@@ -55,9 +55,19 @@ const PlayingVideo = () => {
                 <div id="subscribe">Subscribed</div>
               </div>
              </div>
-               <div id="like">
+              <div id="buttons">
+              <div id="like">
               <ThumbsUp/> {Math.round(videoInfo.statistics.likeCount/1000)}K
-            </div>
+              </div>
+              <div id="like">
+              <Share2 />
+             Share
+              </div>  
+              <div id="like">
+              <ArrowDownToLine />
+            Download
+              </div>
+              </div>
             </div>
            
         </div>
