@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "../stylesheets/PlayingVideo.css"
 import { useParams } from 'react-router-dom'
 import usefetchComments from '../utils/customHooks/usefetchComments';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Comment from './Comment';
 import useVideoInfo from '../utils/customHooks/useVideoInfo';
@@ -10,41 +10,9 @@ import { ArrowDownToLine, Bell, Share2, ThumbsUp } from 'lucide-react';
 import { YT_API_KEY, YT_CHANNEL_INFO } from '../utils/constant';
 import useChannelInfo from '../utils/customHooks/useChannelInfo';
 import VideoInfo from './VideoInfo';
-// import FormatString from '../utils/FormatString';
+import FormatString from '../utils/FormatString';
 
-const formatStringToJSX = (str) => {
-  // Regular expressions to match URLs and hashtags
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-  const hashtagRegex = /(#\w+)/g;
 
-  // Split the string by URLs and hashtags, and keep them in the result array
-  const parts = str.split(/(https?:\/\/[^\s]+|#\w+)/g);
-
-  // Map through the parts and return an array of JSX elements
-  return parts.map((part, index) => {
-    // Check if the part is a URL
-    if (urlRegex.test(part)) {
-      return (
-        <React.Fragment key={index}>
-          <a href={part} target="_blank" rel="noopener noreferrer">
-            {part}
-          </a>
-          <br />
-        </React.Fragment>
-      );
-    }
-    // Check if the part is a hashtag
-    if (hashtagRegex.test(part)) {
-      return (
-        <a key={index} href={`https://example.com/hashtag/${part.substring(1)}`} target="_blank" rel="noopener noreferrer">
-          {part}
-        </a>
-      );
-    }
-    // Return text parts as plain text
-    return <span key={index}>{part}</span>;
-  });
-};
 
 
 const PlayingVideo = () => {
@@ -84,7 +52,7 @@ const PlayingVideo = () => {
         <div id="description"className={showDescription? "fit-content":""} onClick={()=>{setShowDescription(!showDescription)}}>
           <p>{viewsInt.toLocaleString('en-US')} views &nbsp; {formattedDate }</p>
           <p >
-            {formatStringToJSX(videoInfo.snippet.description)}
+            {FormatString(videoInfo.snippet.description)}
           </p>
 
         </div>
