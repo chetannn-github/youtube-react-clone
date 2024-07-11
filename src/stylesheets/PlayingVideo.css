@@ -68,6 +68,16 @@ min-height: 100vh;
     width: 50px;
     background: #000;
     border-radius: 50%;
+    overflow: hidden;
+}
+
+
+#video-playing #nowVideo #video-info #stats #channel-logo img{
+    height: 100%;
+    width: 100%;
+    position:relative;
+    object-fit: cover;
+    object-position: center;
 }
 
 #video-playing #nowVideo #video-info #stats #channel{

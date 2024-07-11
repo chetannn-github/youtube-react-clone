@@ -8,7 +8,8 @@ const videoSlice = createSlice({
         searchResult:null,
         showSearchResult:null,
         comments:null,
-        videoInfo:null
+        videoInfo:null,
+        channelInfo:null,
     },
     reducers:{
         addVideos:(state,action)=>{
@@ -28,9 +29,12 @@ const videoSlice = createSlice({
         },
         addVideoInfo:(state,action) =>{
             state.videoInfo = action.payload;
+        },
+        addChannelInfo:(state,action) =>{
+            state.channelInfo= action.payload;
         }
     }
 });
 
 export default videoSlice.reducer;
-export const {addVideos , addSearchResult,toggleShowSearchResult,addVideoSearchResult,addComments,addVideoInfo} = videoSlice.actions;
+export const {addVideos , addSearchResult,toggleShowSearchResult,addVideoSearchResult,addComments,addVideoInfo,addChannelInfo} = videoSlice.actions;

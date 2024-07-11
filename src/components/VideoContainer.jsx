@@ -11,11 +11,11 @@ const VideoContainer = () => {
     usefetchVideoList();
    
     if (!videoList){return} 
-    // console.log(videoList[0]);
+    console.log(videoList[0]);
   return (
     <div id='video-container'>
         {videoList.map((video)=>(
-          <Link to={`/${video.id}`} key={video.id}>
+          <Link to={`/${video.id}`} key={video.id} channelId={video.snippet.channelId}>
               <div className="video">
                 <img src={`${video.snippet.thumbnails?.maxres?.url || video.snippet.thumbnails?.high?.url || video.snippet.thumbnails?.medium?.url}`} alt="" />
                 <div className="video-info">
