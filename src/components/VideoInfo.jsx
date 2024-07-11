@@ -1,11 +1,11 @@
-import { ArrowDownToLine, Bell, Share2, ThumbsUp } from 'lucide-react'
+import { ArrowDownToLine, Bell, ChevronDown, Share2, ThumbsUp } from 'lucide-react'
 import React from 'react'
 import useChannelInfo from '../utils/customHooks/useChannelInfo';
 import { useSelector } from 'react-redux';
 
 const VideoInfo = ({videoInfo}) => {
-        useChannelInfo(videoInfo.snippet?.channelId);
-        let channelInfo = useSelector((store)=>(store.videoList.channelInfo))
+       let channelInfo=  useChannelInfo(videoInfo.snippet?.channelId);
+        // let channelInfo = useSelector((store)=>(store.videoList.channelInfo))
         if(!channelInfo ) return
 
     console.log(channelInfo)
@@ -27,7 +27,7 @@ const VideoInfo = ({videoInfo}) => {
                     <p>{`${Math.round(channelInfo.statistics?.subscriberCount/1000)<999 ? Math.round(channelInfo.statistics?.subscriberCount/1000):(channelInfo.statistics?.subscriberCount/1000000).toFixed(1)}${Math.round(channelInfo.statistics?.subscriberCount/1000)<999 ?"K":"M"}`} subscribers</p>
                 </div>
                 
-                <div id="subscribe"> <Bell />Subscribed</div>
+                <div id="subscribe"> <Bell />Subscribed <ChevronDown /></div>
               </div>
              </div>
               <div id="buttons">

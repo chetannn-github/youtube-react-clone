@@ -19,7 +19,7 @@ const Navbar = () => {
             <Video />
             <Bell/>
             <div id="user">
-                <img src="./images/user.webp" alt="" />
+                <img src="./images/user.jpg" alt="" />
             </div>
         </div>
 
